@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: extreme_movies_development
   pool: 5
-  username: extreme_movies
+  username:
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -43,7 +43,7 @@ test:
   encoding: unicode
   database: extreme_movies_test
   pool: 5
-  username: extreme_movies
+  username:
   password:
 
 production:
@@ -51,5 +51,5 @@ production:
   encoding: unicode
   database: extreme_movies_production
   pool: 5
-  username: extreme_movies
+  username:
   password:

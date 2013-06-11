@@ -28,6 +28,9 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'pry'
+  gem 'launchy'
+  gem 'shoulda'
 end
 
 gem 'jquery-rails'

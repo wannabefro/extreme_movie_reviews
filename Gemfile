@@ -30,7 +30,8 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'launchy'
-  gem 'shoulda'
+  gem 'shoulda-matchers'
+  gem 'valid_attribute'
 end
 
 gem 'jquery-rails'

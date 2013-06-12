@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :movie do
-    title "MyString"
-    year 1
+    title "Ironman"
+    year 1999
   end
 end

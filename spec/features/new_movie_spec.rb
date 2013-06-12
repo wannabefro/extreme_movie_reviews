@@ -36,7 +36,7 @@ describe "Create a New Movie" do
 
     click_button 'Add Movie'
 
-    expect(page).to have_content('Invalid criteria')
+    expect(page).to have_content('Invalid Criteria')
   end
 
   it "does not create a new movie if the title isn't unique" do
@@ -48,7 +48,7 @@ describe "Create a New Movie" do
 
     click_button "Add Movie"
 
-    expect(page).to have_contact('Movie already created')
+    expect(page).to have_content('Movie already created')
   end
 
 end

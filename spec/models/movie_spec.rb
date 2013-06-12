@@ -24,8 +24,9 @@ describe Movie do
 
 	it 'validates the uniqueness of movie title && year' do
 		FactoryGirl.create(:movie)
-		expect(FactoryGirl.build(:movie).valid?).to eq(false)
-		expect(FactoryGirl.build(:movie, :year => 2008).valid?).to be_true
+		(FactoryGirl.build(:movie).valid?).should be_false
+		(FactoryGirl.build(:movie, :year => 2008).valid?).should be_true
+
 	end
 
 end

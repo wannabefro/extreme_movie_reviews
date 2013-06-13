@@ -7,6 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">eXtreme Reviews</a>
+      <ul class="nav pull-right">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Browse Movies</li>
+        <li><a href="#">Add a Movie</a></li>
+        <% if user_signed_in? %>
+          <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= user.email %></a></li>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <li>Profile</li>
+              <li>Sign Out</li>
+            </ul>
+        <% else %>
+          <li class="sign-in"><a href="#">Sign In</a></li>
+        <% end %>
+      </ul>
+  </div>
 
 <%= yield %>
 

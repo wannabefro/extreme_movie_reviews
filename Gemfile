@@ -7,7 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 
-gem 'zurb-foundation'
+gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'devise'
 

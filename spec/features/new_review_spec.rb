@@ -41,18 +41,19 @@ describe "Creating a new review" do
   end
 
 
-
-  it "does not allow a user to create a review if not signed in" do
-    visit movie_path(valid_movie)
-
-    fill_in "Title", with: "This is an awesome movie"
-    fill_in "Body", with: "This guy is made of metal"
-
-    click_on "Add a Review"
-
-    expect(Review.count).to eql(prev_count)
-    expect(page).to have_content("Sign in")
-    expect(page).to have_content("You must sign in")
+  describe "if a user is not signed in" do
+    it "does not allow a user to create a review" do
+      visit movie_path(valid_movie)
+  
+      fill_in "Title", with: "This is an awesome movie"
+      fill_in "Body", with: "This guy is made of metal"
+  
+      click_on "Add a Review"
+  
+      expect(Review.count).to eql(prev_count)
+      expect(page).to have_content("Sign in")
+      expect(page).to have_content("You must sign in")
+    end
   end
 
 end

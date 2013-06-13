@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
 	end
 
 	def create 
+		
 		@movie = Movie.new(params[:movie])
 		if user_signed_in?
 			if @movie.save

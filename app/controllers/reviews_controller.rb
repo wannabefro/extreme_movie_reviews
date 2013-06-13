@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   def create
     @movie = Movie.find(params[:movie_id])
     @review = @movie.reviews.build(params[:review])
-
+    
     if user_signed_in?
       if @review.save
         redirect_to movie_path(@movie)

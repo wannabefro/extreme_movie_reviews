@@ -10,6 +10,9 @@ describe Review do
     
     it { should have_valid(:body).when("The best Ironman yet!") }
     it { should_not have_valid(:body).when(nil, "") }
+
+    it { should belong_to(:user) }
+    it { should belong_to(:movie) }
   end
 
 end

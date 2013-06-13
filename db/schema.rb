@@ -14,15 +14,16 @@
 ActiveRecord::Schema.define(:version => 20130612233702) do
 
   create_table "movies", :force => true do |t|
-    t.string   "title"
-    t.integer  "year"
+    t.string   "title",      :null => false
+    t.integer  "year",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "reviews", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
+    t.string   "title",      :null => false
+    t.text     "body",       :null => false
+    t.integer  "movie_id",   :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

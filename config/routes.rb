@@ -27,7 +27,9 @@ ExtremeMovies::Application.routes.draw do
   #     end
   #   end
 
-  resources :movies
+  resources :movies do
+    resources :reviews
+  end
 
   # Sample resource route with sub-resources:
   #   resources :products do

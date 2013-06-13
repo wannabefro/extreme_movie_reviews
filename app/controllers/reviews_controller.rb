@@ -4,11 +4,16 @@ class ReviewsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @review = @movie.reviews.build(params[:review])
 
-    if @review.save
-      redirect_to movie_path(@movie)
+    if user_signed_in?
+      if @review.save
+        redirect_to movie_path(@movie)
+      else
+        flash[:notice] = "Cannot be blank"
+        redirect_to movie_path(@movie)
+      end
     else
-      flash[:notice] = "Cannot be blank"
-      redirect_to movie_path(@movie)
+      flash[:notice] = "You must sign in"
+      redirect_to new_user_session_path
     end
 
   end

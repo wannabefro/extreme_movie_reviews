@@ -142,6 +142,10 @@ GEM
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.2.6)
+      actionpack (>= 3.1)
+      execjs
+      railties (>= 3.1)
     tzinfo (0.3.37)
     uglifier (2.1.1)
       execjs (>= 0.3.0)
@@ -151,8 +155,6 @@ GEM
       rack (>= 1.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
-    zurb-foundation (4.2.1)
-      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
@@ -171,6 +173,6 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   shoulda-matchers
   simple_form
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   valid_attribute
-  zurb-foundation

@@ -7,7 +7,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to movie_path(@movie)
     else
-      render "movies/show"
+      flash[:notice] = "Cannot be blank"
+      redirect_to movie_path(@movie)
     end
 
   end

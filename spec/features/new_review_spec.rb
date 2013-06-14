@@ -52,7 +52,7 @@ describe "Creating a new review" do
   
       expect(Review.count).to eql(prev_count)
       expect(page).to have_content("Sign in")
-      expect(page).to have_content("You must sign in")
+      expect(page).to have_content("You need to sign in")
     end
   end
 

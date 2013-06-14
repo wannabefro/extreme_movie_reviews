@@ -12,6 +12,7 @@ describe 'Review to Movie' do
 
 end
       it 'should only allow one review per movie' do 
+        prev_count = valid_movie.reviews.count
       	visit movie_path(valid_movie.id)
       	fill_in 'Title', :with => 'Whatever I want'
       	fill_in 'Body', :with => 'Whatever else I want'
@@ -20,8 +21,10 @@ end
       	fill_in 'Title', :with => 'Horrible movie'
       	fill_in 'Body', :with => 'YES'
       	click_button 'Add a Review'
+        save_and_open_page
       	expect(page).to have_content('You have already reviewed this movie')
       	expect(current_path).to eql(movie_path(valid_movie.id))
+        expect(valid_movie.reviews.count).to eql(prev_count + 1)
       end
 
 end

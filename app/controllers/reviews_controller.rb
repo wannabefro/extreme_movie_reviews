@@ -5,17 +5,15 @@ class ReviewsController < ApplicationController
   def create
     @movie = Movie.find(params[:movie_id])
     @review = @movie.reviews.build(params[:review])
+    @review.user = current_user
 
-    if @movie.unique_review?(current_user)
-      if @review.save(params[:review])
-        current_user.reviews << @review
-        redirect_to movie_path(@movie)
-      else
-        flash[:notice] = "Cannot be blank"
-        redirect_to movie_path(@movie)
-      end
+   
+    if @review.save(params[:review])
+
+      redirect_to movie_path(@movie)
     else
-      flash[:notice] = "You have already reviewed this movie"
+      # flash[:notice] = @review.errors.
+      # render "movies/show"
       redirect_to movie_path(@movie)
     end
   end

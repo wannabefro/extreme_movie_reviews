@@ -7,7 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 
-gem 'zurb-foundation'
+gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'devise'
 
@@ -30,7 +30,8 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'launchy'
-  gem 'shoulda'
+  gem 'shoulda-matchers'
+  gem 'valid_attribute'
 end
 
 gem 'jquery-rails'

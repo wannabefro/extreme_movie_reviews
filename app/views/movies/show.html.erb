@@ -1,11 +1,6 @@
 	<%= @movie.title %>
 	<%= @movie.year %>
 
-<% if flash[:notice] %>
-  <%= notice %>
-<% end %>
-
-
  <%= render "reviews/form" %>
 
  <%= render "reviews/reviews_index" %>

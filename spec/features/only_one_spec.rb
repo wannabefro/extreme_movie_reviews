@@ -21,8 +21,7 @@ end
       	fill_in 'Title', :with => 'Horrible movie'
       	fill_in 'Body', :with => 'YES'
       	click_button 'Add a Review'
-        save_and_open_page
-      	expect(page).to have_content('You have already reviewed this movie')
+      	expect(page).to have_content('Cannot save review. You cannot review the same movie twice, and fields cannot be empty.')
       	expect(current_path).to eql(movie_path(valid_movie.id))
         expect(valid_movie.reviews.count).to eql(prev_count + 1)
       end

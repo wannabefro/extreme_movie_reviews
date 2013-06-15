@@ -9,11 +9,11 @@ describe "Creating a new review" do
   describe "if a user is signed in" do  
     before do
       visit new_user_session_path
-
+      save_and_open_page
       fill_in "Email", with: valid_user.email
       fill_in "Password", with: valid_user.password
 
-      click_on "Sign in"
+      click_button "Sign in"
 
     end
 

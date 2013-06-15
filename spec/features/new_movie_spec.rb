@@ -9,7 +9,7 @@ describe "Create a New Movie" do
       visit new_user_session_path
       fill_in "Email", with: valid_user.email
       fill_in "Password", with: valid_user.password
-      click_on "Sign in"
+      click_button "Sign in"
     end
   
     it "has a form" do

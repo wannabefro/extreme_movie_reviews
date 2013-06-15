@@ -1,6 +1,15 @@
-<%= simple_form_for([@movie, @movie.reviews.build]) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :body, as: :text %>
-
-  <%= f.button :submit, "Add a Review" %>
-<% end %>
+<div class='row'>
+  <div class='container'>
+    <%= simple_form_for([@movie, @movie.reviews.build], :html => { :class => "form" }) do |f| %>
+      
+      <legend>Add an eXtreme review for <%= @movie.title %></legend>
+    
+      <div>
+        <%= f.input :title, label: "eXtreme Review Headline" %>
+        <%= f.input :body, label: "Your eXtreme Review", as: :text, required: false, :input_html =>   {:size => "50x6", :class => "span8"} %>
+      </div>
+    
+      <%= f.button :submit, "Add a Review", :html => {:class => 'btn btn-success'} %>
+    <% end %>
+  </div>
+</div>

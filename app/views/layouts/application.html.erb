@@ -7,47 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="brand" href="#">eXtreme Reviews</a>
-        <ul class="nav pull-right">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Browse Movies</a></li>
-          <li><a href="<%= new_movie_path %>">Add a Movie</a></li>
-          <% if user_signed_in? %>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= current_user.email %><b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Profile</a></li>
-                <li class="divider"></li>
-                <li><a href="<%= destroy_user_session_path %>">Sign Out</a></li>
-              </ul>
-            </li>
-          <% else %>
-            <li class="sign-in"><a href="#">Sign In</a></li>
-          <% end %> 
-        </ul>
-      </div>
-    </div>
-  </div>
+  
+<%= render 'header' %>
 
   <%= notice %>
   <%= alert %>
-
-<div class="row main-row">
+  
+  
+  <%= yield %>
+  
+<div class="row">
   <div class="container">
-<%= yield %>
+    <p class='footer-row'>&copy; eXtreme Reviews</p>
   </div>
 </div>
 
-<div class="row footer-row">
-  <div class="container">
-    <p>&copy eXtreme Reviews</p>
-  </div>
-</div>
-
-   <%= debug(params) if Rails.env.development? %>
-      <%= debug(session) if Rails.env.development? %>
+<!-- <%= debug(params) if Rails.env.development? %>
+     <%= debug(session) if Rails.env.development? %> -->
 </body>
 </html>

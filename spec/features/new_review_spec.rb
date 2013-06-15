@@ -20,8 +20,8 @@ describe "Creating a new review" do
       it "creates a new review when all required fields are filled in" do
         visit movie_path(valid_movie)
       
-        fill_in "Title", with: "This is an awesome movie"
-        fill_in "Body", with: "The guy is totally made of metal!"
+        fill_in "eXtreme Review Headline", with: "This is an awesome movie"
+        fill_in "Your eXtreme Review", with: "The guy is totally made of metal!"
     
         click_on "Add a Review"
         
@@ -45,8 +45,8 @@ describe "Creating a new review" do
     it "does not allow a user to create a review" do
       visit movie_path(valid_movie)
   
-      fill_in "Title", with: "This is an awesome movie"
-      fill_in "Body", with: "This guy is made of metal"
+      fill_in "eXtreme Review Headline", with: "This is an awesome movie"
+      fill_in "Your eXtreme Review", with: "This guy is made of metal"
   
       click_on "Add a Review"
   

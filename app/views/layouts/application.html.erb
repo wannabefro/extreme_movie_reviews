@@ -34,20 +34,17 @@
 
   <%= notice %>
   <%= alert %>
-
-<div class="row main-row">
-  <div class="container">
-<%= yield %>
+  
+  
+  <%= yield %>
+  
+  <div class="row footer-row">
+    <div class="container">
+      <p>&copy; eXtreme Reviews</p>
+    </div>
   </div>
-</div>
 
-<div class="row footer-row">
-  <div class="container">
-    <p>&copy eXtreme Reviews</p>
-  </div>
-</div>
-
-   <%= debug(params) if Rails.env.development? %>
-      <%= debug(session) if Rails.env.development? %>
+<!--    <%= debug(params) if Rails.env.development? %>
+   <%= debug(session) if Rails.env.development? %> -->
 </body>
 </html>

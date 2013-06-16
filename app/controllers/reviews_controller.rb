@@ -16,4 +16,9 @@ class ReviewsController < ApplicationController
       redirect_to movie_path(@movie)
     end
   end
+
+  def index
+    @movie = Movie.find(params[:movie_id])
+    @reviews = @movie.reviews
+  end
 end

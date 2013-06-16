@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130613184648) do
+=======
+ActiveRecord::Schema.define(:version => 20130613130430) do
+>>>>>>> master
 
   create_table "movies", :force => true do |t|
     t.string   "title"
@@ -20,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20130613184648) do
     t.datetime "updated_at", :null => false
   end
 
+<<<<<<< HEAD
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
     t.string   "username"
@@ -33,6 +38,17 @@ ActiveRecord::Schema.define(:version => 20130613184648) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
+=======
+  create_table "reviews", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "movie_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
+
+>>>>>>> master
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false

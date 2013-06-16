@@ -8,14 +8,17 @@
 </head>
 <body>
 
-  <% if flash[:notice] %>
-    <p class="notice"><%= flash[:notice] %></p>
-  <% end %>
-  <% if flash[:error] %>
-    <p class="error"><%= flash[:error] %></p>
-  <% end %>
 
 <%= yield %>
+  </div>
+</div>
+
+<div class="row footer-row">
+  <div class="container">
+    <p>&copy eXtreme Reviews</p>
+  </div>
+</div>
+
 
 </body>
 </html>

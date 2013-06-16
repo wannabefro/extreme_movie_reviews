@@ -12,7 +12,7 @@ describe Movie do
 	end
 
 	describe 'validates year' do 
-		it { should have_valid(:year).when(1988) }
+		it { should have_valid(:year).when(1888,1900,2014) }
 		it { should_not have_valid(:title).when('', nil) }
 
 	end

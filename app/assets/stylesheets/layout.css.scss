@@ -5,3 +5,11 @@
 .footer-row {
   font-size: 8px;
 }
+
+.navbar .brand {
+  transition: all 0.2s linear 0s;
+}
+
+.navbar .brand:hover, .navbar .brand:focus {
+  color: red;
+}

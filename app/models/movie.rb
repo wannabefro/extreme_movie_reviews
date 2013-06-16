@@ -7,9 +7,14 @@ class Movie < ActiveRecord::Base
   validates :year, :inclusion => 1875..(Time.now.year + 1)
 
 
+  def unique_review?(current_user)
+    self.reviews.where(:user_id => current_user.id).empty?
+  end
+
 
 end
 
 
 
 
+# movie.reviews.where(:user_id => user.id)

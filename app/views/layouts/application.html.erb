@@ -1,24 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>ExtremeMovies</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
 
+-<!DOCTYPE html>
+-<html>
+-<head>
+-  <title>ExtremeMovies</title>
+-  <%= stylesheet_link_tag    "application", :media => "all" %>
+-  <%= javascript_include_tag "application" %>
+-  <%= csrf_meta_tags %>
+-</head>
+-<body>
+-<%= render 'header' %>
+    <%= notice %>
++   <%= alert %>
+-  <div class="container">
+-<%= yield %>
+-  </div>
+-</div>
+-
+-<div class="row footer-row">
+-  <div class="container">
+-    <p>&copy; eXtreme Reviews</p>
+-  </div>
+-</div>
+-
+-
+-</body>
+-</html>
 
-<%= yield %>
-  </div>
-</div>
-
-<div class="row footer-row">
-  <div class="container">
-    <p>&copy eXtreme Reviews</p>
-  </div>
-</div>
-
-
-</body>
-</html>

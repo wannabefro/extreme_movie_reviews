@@ -4,7 +4,7 @@ describe "Visiting the home page" do
   
   it "should visit the home page" do
     visit root_path
-    expect(page).to have_content("Extreme Movies")
+    expect(page).to have_content("eXtreme Reviews")
   end
 
 end

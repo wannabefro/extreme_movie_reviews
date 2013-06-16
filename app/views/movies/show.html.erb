@@ -1,11 +1,8 @@
-	<%= @movie.title %>
-	<%= @movie.year %>
-
-<% if flash[:notice] %>
-  <%= notice %>
-<% end %>
-
+<div class="row">
+  <div class="container">
+  <h1><%= @movie.title %> (<%= @movie.year %>)</h1>
+  </div>
+</div>
 
  <%= render "reviews/form" %>
-
  <%= render "reviews/reviews_index" %>

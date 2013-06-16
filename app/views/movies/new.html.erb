@@ -1,8 +1,10 @@
-<%= simple_form_for(@movie) do |f| %>
-	<%= f.input :title %>
-	<%= f.input :year, as: :string %>
-	<%= f.button :submit, 'Add Movie' %>
+<div class="row">
+  <div class="container">
+    <%= simple_form_for(@movie) do |f| %>
+    	<%= f.input :title, label: 'Movie Title' %>
+    	<%= f.input :year, as: :string %>
+    	<%= f.button :submit, 'Add Movie' %>
+    <% end %>
+  </div>
+</div>
 
-
-
-	<% end %>

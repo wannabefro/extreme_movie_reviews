@@ -2,6 +2,10 @@
   <div class="container">
   <h1><%= @movie.title %> (<%= @movie.year %>)</h1>
   </div>
+  <%= simple_form_for [@likeable, @like] do |f| %>
+    <div class="actions"><%= f.button :submit, "Like", class: "btn" %></div>
+    <% end %>
+
 </div>
 
  <%= render "reviews/form" %>

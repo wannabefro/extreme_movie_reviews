@@ -11,15 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130613184648) do
-=======
-ActiveRecord::Schema.define(:version => 20130613130430) do
->>>>>>> master
-=======
 ActiveRecord::Schema.define(:version => 20130614182712) do
->>>>>>> 414ee98e0c61bdead6be4f823f77a5e3cb6fc187
 
   create_table "movies", :force => true do |t|
     t.string   "title"
@@ -28,10 +20,6 @@ ActiveRecord::Schema.define(:version => 20130614182712) do
     t.datetime "updated_at", :null => false
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 414ee98e0c61bdead6be4f823f77a5e3cb6fc187
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
     t.string   "username"
@@ -45,10 +33,6 @@ ActiveRecord::Schema.define(:version => 20130614182712) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 414ee98e0c61bdead6be4f823f77a5e3cb6fc187
   create_table "reviews", :force => true do |t|
     t.string   "title"
     t.text     "body"
@@ -58,12 +42,8 @@ ActiveRecord::Schema.define(:version => 20130614182712) do
     t.integer  "user_id"
   end
 
-<<<<<<< HEAD
->>>>>>> master
-=======
   add_index "reviews", ["user_id", "movie_id"], :name => "index_reviews_on_user_id_and_movie_id", :unique => true
 
->>>>>>> 414ee98e0c61bdead6be4f823f77a5e3cb6fc187
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false

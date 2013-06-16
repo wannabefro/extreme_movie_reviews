@@ -25,7 +25,6 @@ describe 'admin duties' do
 
     visit rails_admin_path
     expect(current_path).to eql(root_path)
-    save_and_open_page
     expect(page).to have_content("You ain't no admin")
 
   end

@@ -10,7 +10,7 @@ describe 'admin duties' do
     visit new_user_session_path
     fill_in 'Email', with: admin.email
     fill_in 'Password', with: admin.password
-    click_on 'Sign in'
+    click_button 'Sign in'
 
     visit rails_admin_path
     expect(current_path).to eql(rails_admin_path)
@@ -21,7 +21,7 @@ describe 'admin duties' do
     visit new_user_session_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_on 'Sign in'
+    click_button 'Sign in'
 
     visit rails_admin_path
     expect(current_path).to eql(root_path)

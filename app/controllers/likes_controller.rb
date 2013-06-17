@@ -5,13 +5,13 @@ class LikesController < ApplicationController
   end
 
   def create
-    @like = @likeable.likes.new(params[:like])
-    @like.liked = true
-
+    @like = Like.new(params[:like])
+    @like.user = current_user
+    puts "something where to look #{@like.likeable_type}"
     if @like.save
-      render "movies/show", notice: "Like added!"
+      redirect_to :back, notice: 'Like added'
     else
-      render "new"
+      redirect_to :back, notice: "We have your credit card details..."
     end
   end
 end

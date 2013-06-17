@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
-
+	helper_method :likeable
+	
 	def new
 		@movie = Movie.new
 
@@ -24,10 +25,17 @@ class MoviesController < ApplicationController
 	def show 
 		@movie = Movie.find(params[:id])
 		# @reviews = @movie.reviews
+		@like = @movie.likes.new
 
 	end
 
 	def index
 		@movies = Movie.all
+	end
+
+	protected
+
+	def likeable
+		@likeable ||= @movie
 	end
 end

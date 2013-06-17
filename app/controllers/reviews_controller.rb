@@ -20,5 +20,6 @@ class ReviewsController < ApplicationController
   def index
     @movie = Movie.find(params[:movie_id])
     @reviews = @movie.reviews
+    @like = @movie.likes.new
   end
 end

@@ -1,10 +1,15 @@
+
 <div class="row">
   <div class="container">
   <h1><%= @movie.title %> (<%= @movie.year %>)</h1>
   </div>
-  <%= simple_form_for [@likeable, @like] do |f| %>
+
+  <%= simple_form_for [@like] do |f| %>
+  <%= f.hidden_field :likeable_type, :value => @movie.class %>
+  <%= f.hidden_field :likeable_id, :value => @movie.id %>
     <div class="actions"><%= f.button :submit, "Like", class: "btn" %></div>
-    <% end %>
+  <% end %>
+
 
 </div>
 

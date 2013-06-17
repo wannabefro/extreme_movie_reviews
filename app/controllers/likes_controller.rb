@@ -7,7 +7,6 @@ class LikesController < ApplicationController
   def create
     @like = Like.new(params[:like])
     @like.user = current_user
-    puts "something where to look #{@like.likeable_type}"
     if @like.save
       redirect_to :back, notice: 'Like added'
     else

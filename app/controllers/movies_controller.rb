@@ -33,9 +33,4 @@ class MoviesController < ApplicationController
 		@movies = Movie.all
 	end
 
-	protected
-
-	def likeable
-		@likeable ||= @movie
-	end
 end

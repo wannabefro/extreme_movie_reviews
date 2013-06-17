@@ -6,7 +6,7 @@ feature "Review up-voting" do
   let!(:user)   { FactoryGirl.create(:user) }
   let!(:review) { FactoryGirl.build(:review) }
 
-  scenario "when I am signed in", focus: true do
+  scenario "when I am signed in" do
     sign_in_as(user)
     visit movie_path(movie)
     write_review(review)

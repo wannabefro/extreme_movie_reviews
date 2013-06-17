@@ -21,4 +21,11 @@ class ReviewsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @reviews = @movie.reviews
   end
+
+  def show
+    @user = current_user
+    @review = Review.find(params[:review_id])
+
+    Recent_review.create(:user_id => @user.id, :review_id => @review.id)
+  end
 end

@@ -1,6 +1,7 @@
 class Review < ActiveRecord::Base
   belongs_to :movie
   belongs_to :user
+  belongs_to :recent_reviews
 
   attr_accessible :title, :body, :movie_id, :user_id, :user, :movie
 

@@ -1,7 +1,7 @@
 <p>Profile for <%= @user.email %></p>
 
 <div>
-  <%= @reviews.each do |f| %>
+  <% @reviews.each do |f| %>
     <p><%= Review.find(f.review_id).title %></p>
     <p><%= Review.find(f.review_id).body %></p>
   <% end %>

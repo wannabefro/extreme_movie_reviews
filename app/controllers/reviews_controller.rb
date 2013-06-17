@@ -24,8 +24,9 @@ class ReviewsController < ApplicationController
 
   def show
     @user = current_user
-    @review = Review.find(params[:review_id])
+    @movie = Movie.find(params[:movie_id])
+    @review = Review.find(params[:id])
 
-    Recent_review.create(:user_id => @user.id, :review_id => @review.id)
+    RecentReview.create(:user_id => @user.id, :review_id => @review.id)
   end
 end

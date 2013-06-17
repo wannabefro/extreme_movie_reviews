@@ -1,6 +1,7 @@
 <div class="row">
   <div class="container">
     <% @reviews.each do |review| %>
+      <%= link_to review.title, [@movie, review] %>
       <h4><%= review.title %></h4>
       <p><%= review.body %></p>
     <% end %>

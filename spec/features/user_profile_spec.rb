@@ -19,11 +19,21 @@ describe 'User Profile' do
   context "Reviews" do
 
     it 'shows the most recently visted movie reviews' do
-      visit movie_review_path(valid_review)
-
+      visit new_movie_path
+      fill_in "Title", :with => "Superman"
+      fill_in "Year", :with => 2013
+      click_button "Add Movie"
+      expect(page).to have_content("Superman")
+      fill_in "eXtreme Review Headline", with: "This is an awesome movie"
+      fill_in "Your eXtreme Review", with: "The guy is totally made of metal!"
+      click_on "Add a Review"
+      expect(page).to have_content("This is an awesome movie")
+      click_on "All Reviews"
+      click_on "This is an awesome movie"
+      expect(page).to have_content("The guy is totally made of metal!")
       visit user_path(valid_user)
 
-      expect(page).to have_content(valid_review.title)
+      expect(page).to have_content("This is an awesome movie")
     end
   end
   

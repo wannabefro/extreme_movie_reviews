@@ -8,12 +8,12 @@ describe "Creating a new review" do
 
   describe "if a user is signed in" do
     before do
-      visit new_user_session_path
-      fill_in "Email", with: valid_user.email
-      fill_in "Password", with: valid_user.password
+      # visit new_user_session_path
+      # fill_in "Email", with: valid_user.email
+      # fill_in "Password", with: valid_user.password
 
-      click_button "Sign in"
-
+      # click_button "Sign in"
+      sign_in_as valid_user
     end
 
       it "creates a new review when all required fields are filled in" do

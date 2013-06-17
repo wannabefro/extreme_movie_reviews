@@ -11,3 +11,10 @@
     </div>
   </div>
 </div>
+
+<div class="last-three-movies">Latest Movies
+	<% @movies.last(3).each do |f| %>
+		<%= f.title %>
+		<% end %>
+</div>
+

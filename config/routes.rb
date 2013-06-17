@@ -2,6 +2,10 @@ ExtremeMovies::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :users
+  
+  resources :movies do
+    resources :reviews
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -29,9 +33,7 @@ ExtremeMovies::Application.routes.draw do
   #     end
   #   end
 
-  resources :movies do
-    resources :reviews
-  end
+  
 
   # Sample resource route with sub-resources:
   #   resources :products do

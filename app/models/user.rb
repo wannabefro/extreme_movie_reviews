@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  belongs_to :recent_review
+  has_many :recent_reviews
   has_many :reviews
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

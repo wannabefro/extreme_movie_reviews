@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 describe 'User Profile' do
   let!(:valid_user) { FactoryGirl.create(:user) }
@@ -32,8 +33,18 @@ describe 'User Profile' do
       click_on "This is an awesome movie"
       expect(page).to have_content("The guy is totally made of metal!")
       visit user_path(valid_user)
-
+      
       expect(page).to have_content("This is an awesome movie")
+    end
+
+    it "doesn't re-record a recently visted review" do
+      previous = RecentReview.count
+      movie_with_review = create(:movie_with_review)
+      visit movie_review_path(movie_with_review)
+      expect(RecentReview.count).to eq(previous.count + 1)
+      visit root_path
+      visit movie_review_path(movie_with_review) 
+      expect(RecentReview.count).to eq(previous.count + 1)
     end
   end
   

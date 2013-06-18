@@ -2,7 +2,7 @@
 
 <div>
   <% @reviews.each do |f| %>
-    <p><%= Review.find(f.review_id).title %></p>
-    <p><%= Review.find(f.review_id).body %></p>
+    <p><%= f.review.title %></p>
+    <p><%= f.review.body %></p>
   <% end %>
 </div>

@@ -4,6 +4,12 @@
       <%= link_to review.title, [@movie, review] %>
       <h4><%= review.title %></h4>
       <p><%= review.body %></p>
+      <%= simple_form_for [@like] do |f| %>
+        <%= f.hidden_field :likeable_type, :value => review.class %>
+        <%= f.hidden_field :likeable_id, :value => review.id %>
+        <div class="actions"><%= f.button :submit, "Like", class: "btn" %></div>
+      <% end %>
+    </div>
     <% end %>
   </div>
 </div>

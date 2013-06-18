@@ -1,5 +1,6 @@
 class Movie < ActiveRecord::Base
   has_many :reviews
+  has_many :likes, as: :likeable
 
   attr_accessible :title, :year
   validates_uniqueness_of :title, :scope => :year, :message => 'Movie already created'

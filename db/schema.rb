@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130617201755) do
+ActiveRecord::Schema.define(:version => 20130618223303) do
 
   create_table "likes", :force => true do |t|
     t.integer  "likeable_id",   :null => false
@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(:version => 20130617201755) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "recent_movies", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "recent_reviews", :force => true do |t|
     t.integer  "user_id"

@@ -1,8 +1,16 @@
 <p>Profile for <%= @user.email %></p>
 
 <div>
+  <h3>Recent reviews viewed</h3>
   <% @reviews.each do |f| %>
     <p><%= f.review.title %></p>
     <p><%= f.review.body %></p>
+  <% end %>
+</div>
+
+<div>
+  <h3>Recent movies viewed</h3>
+  <% @movies.each do |f| %>
+    <p><%= "#{f.movie.title} (#{f.movie.year})" %></p>
   <% end %>
 </div>

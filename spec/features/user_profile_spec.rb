@@ -38,12 +38,21 @@ describe 'User Profile' do
     end
 
   context "Movies" do
-    it 'shows the most recently visted movie reviews' do
+    it 'shows the most recently visted movie' do
       visit movie_path(movie)
       visit user_path(valid_user)
 
       expect(page).to have_content("Ironman")
     end
+
+    it "doesn't re-record a recently visted movie" do
+       previous = RecentMovies.count
+       visit movie_path(movie)
+       expect(RecentMovies.count).to eq(previous + 1)
+       visit root_path
+       visit movie_path(movie) 
+       expect(RecentMovies.count).to eq(previous + 1)
+     end
   end
   
 end

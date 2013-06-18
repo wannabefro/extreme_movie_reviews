@@ -35,6 +35,15 @@ describe 'User Profile' do
        visit movie_review_path(movie, review) 
        expect(RecentReview.count).to eq(previous + 1)
      end
-   end
+    end
+
+  context "Movies" do
+    it 'shows the most recently visted movie reviews' do
+      visit movie_path(movie)
+      visit user_path(valid_user)
+
+      expect(page).to have_content("Ironman")
+    end
+  end
   
 end

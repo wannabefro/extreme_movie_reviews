@@ -35,11 +35,6 @@ class ReviewsController < ApplicationController
         RecentReview.create(:user => @user, :review => @review)
       end
     end
-    # else 
-    #   if recent_reviews.last.review_id != @review.id
-    #     RecentReview.create(:user => @user, :review => @review)
-    #   end
-    # end
     
   end
 end

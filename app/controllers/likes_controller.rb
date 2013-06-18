@@ -8,9 +8,11 @@ class LikesController < ApplicationController
     @like = Like.new(params[:like])
     @like.user = current_user
     if @like.save
-      redirect_to :back, notice: 'Like added'
+      flash[:notice] = 'Like added'
+      redirect_back_or_to_default
     else
-      redirect_to :back, notice: "We have your credit card details..."
+      flash[:notice] = 'There can only be one!'
+      redirect_back_or_to_default
     end
   end
 end

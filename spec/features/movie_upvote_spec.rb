@@ -23,7 +23,7 @@ feature "Movie up-voting" do
 
     
     expect(movie.likes.count).to eql(prev_count)
-    expect(page).to have_content("We have your credit card details...")
+    expect(page).to have_content("There can only be one!")
   end
 
   scenario "when I am not signed in"

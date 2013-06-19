@@ -17,7 +17,7 @@ let!(:movie3) { FactoryGirl.create(:movie, :title => 'Ironman3') }
 
 	it 'should give the user an area to see displayed movies' do 
 		visit root_path
-		page.should have_content('Latest Movies')
+		page.should have_content('Recently Added eXtreme Movies')
 	end
 
 	it 'should display the last three movies to the user' do 

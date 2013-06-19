@@ -16,7 +16,7 @@ describe "Browse movie" do
 		it 'it has a browese movie link' do
 			visit root_path
 			click_on 'Browse'
-			page.should have_content 'Movies with Reviews'
+			expect(current_path).to eq(movies_path)
 		end
 	end
 

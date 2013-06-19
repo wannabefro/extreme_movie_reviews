@@ -12,9 +12,13 @@
   </div>
 </div>
 
-<div class="row"></div>
+<div class="row">
   <div class="container">
     <table class="table table-condensed last-three">
+      <div class="row">
+        <h3 class="span6">Recently Added eXtreme Movies</h3>
+        <h3 class="span6 text-right"><%= link_to "View All eXtreme Movies", movies_path %></h3>
+      </div>
       <%= render 'home_table_headers' %>
       <%= render 'home_index_values' %>
     </table>

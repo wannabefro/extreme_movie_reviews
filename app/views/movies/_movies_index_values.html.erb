@@ -1,4 +1,4 @@
-<% @movies.last(3).reverse.each do |movie| %>
+<% @movies.each do |movie| %>
   <tr>
     <th><%= link_to "#{movie.title}", movie_path(movie) %></th>
     <th><%= movie.year %></th>
@@ -11,7 +11,9 @@
           <%= f.button :submit, "Like", class: "btn" %>
       <% end %>
     </th>
-    <th class='view-reviews'><%= link_to "View eXtreme Reviews", [movie, :reviews]   %></th>
-    <th class='add-review'><%= link_to "Add eXtreme Review", movie_path(movie) + "#new-review" %>  </th>
+    <th class='view-reviews'><%= link_to "View eXtreme Reviews", [movie, :reviews] %>
+    </th>
+    <th class='add-review'><%= link_to "Add eXtreme Review", movie_path(movie) + "#new-review" %>  
+    </th>
   </tr>
 <% end %>

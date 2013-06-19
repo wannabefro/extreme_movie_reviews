@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(:version => 20130618223303) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "recent_movies", :force => true do |t|
-
     t.integer  "user_id",     :null => false
     t.integer  "movie_id",    :null => false
     t.datetime "created_at", :null => false
@@ -50,7 +49,6 @@ ActiveRecord::Schema.define(:version => 20130618223303) do
   end
 
   create_table "recent_reviews", :force => true do |t|
-
     t.integer  "user_id",     :null => false
     t.integer  "review_id",   :null => false
     t.datetime "created_at", :null => false

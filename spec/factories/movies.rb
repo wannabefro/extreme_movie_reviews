@@ -8,3 +8,10 @@ FactoryGirl.define do
   end
 
 end
+
+FactoryGirl.define do
+	factory :reviewed_movies do 
+		sequence(:title) { |n| "Ironman#{n}" }
+		sequence(:year) { |n| "200#{n}" }
+	end
+end

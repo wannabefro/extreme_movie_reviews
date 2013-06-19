@@ -6,8 +6,15 @@
   font-size: 8px;
 }
 
+.navbar .navbar-inner{
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 24px;
+}
+
 .navbar .brand {
   transition: all 0.2s linear 0s;
+  font-size: 30px;
 }
 
 .navbar .brand:hover, .navbar .brand:focus {

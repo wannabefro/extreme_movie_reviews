@@ -1,0 +1,20 @@
+<p>Profile for <%= @user.email %></p>
+
+<div>
+  <h3>Recent reviews viewed</h3>
+  <% n = 1 %>
+  <% @reviews.each do |f| %>
+    <p class=<%= "review#{n}" %>><%= f.review.title %></p>
+    <p><%= f.review.body %></p>
+    <% n += 1 %>
+  <% end %>
+</div>
+
+<div>
+  <h3>Recent movies viewed</h3>
+  <% x = 1 %>
+  <% @movies.each do |f| %>
+    <p class=<%= "movie#{x}" %>><%= "#{f.movie.title} (#{f.movie.year})" %></p>
+    <% x += 1 %>
+  <% end %>
+</div>

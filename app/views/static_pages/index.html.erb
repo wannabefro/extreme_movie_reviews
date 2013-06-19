@@ -12,9 +12,12 @@
   </div>
 </div>
 
-<div class="last-three-movies">Latest Movies
-	<% @movies.last(3).each do |f| %>
-		<%= f.title %>
-		<% end %>
+<div class="row"></div>
+  <div class="container">
+    <table class="table table-condensed last-three">
+      <%= render 'home_table_headers' %>
+      <%= render 'home_index_values' %>
+    </table>
+  </div>
 </div>
 

@@ -12,3 +12,20 @@
 .sign-up-link {
   padding-top: 35px;
 }
+
+.last-three th, .last-three td {
+  text-align: center;
+  width: 100px;
+}
+
+.last-three .likes, .last-three .actions {
+  width: 65px;
+}
+
+.last-three .view-reviews, .last-three .add-review {
+  width: 175px;
+}
+
+.last-three .view-reviews {
+  padding-left: 200px;
+}

@@ -1,0 +1,5 @@
+<%= @user.email %>
+<% @user.reviews.each do |review| %>
+	<%= review.title %>
+	<% end %>
+<%= @user.last_sign_in_at %>

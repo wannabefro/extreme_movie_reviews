@@ -9,7 +9,7 @@ ExtremeMovies::Application.routes.draw do
     resources :reviews
   end
 
-  resources :extmin, :only => [:index]
+  resources :extmin, :only => [:index, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

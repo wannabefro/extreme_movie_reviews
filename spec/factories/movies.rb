@@ -3,7 +3,7 @@
 FactoryGirl.define do
 
   factory :movie do
-    title "Ironman"
+    sequence(:title) {|n| "Ironman #{n}"}
     year 1999
   end
 

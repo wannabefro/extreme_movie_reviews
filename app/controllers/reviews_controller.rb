@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
     @user = current_user
     @movie = Movie.find(params[:movie_id])
     @review = Review.find(params[:id])
-    @recent_reviews = RecentReview.where("user_id = ?", @user.id).limit(3)
+    @recent_reviews = RecentReview.where("user_id = ?", @user.id).last(3).reverse
 
     if @recent_reviews.blank?
       RecentReview.create(:user => @user, :review => @review)

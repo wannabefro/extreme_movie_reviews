@@ -26,15 +26,18 @@ class MoviesController < ApplicationController
 		@user = current_user
 		@movie = Movie.find(params[:id])
 		@like = @movie.likes.new
-		@recent_movies = RecentMovies.where("user_id = ?", @user.id).last(3).reverse
+    if user_signed_in?
+		  @recent_movies = RecentMovies.where("user_id = ?", @user.id).last(3).reverse
+  
 
-    if @recent_movies.blank?
-      RecentMovies.create(:user => @user, :movie => @movie)
-    else
-      if @recent_movies.last.movie_id == @movie.id
-        0
-      else
+      if @recent_movies.blank?
         RecentMovies.create(:user => @user, :movie => @movie)
+      else
+        if @recent_movies.last.movie_id == @movie.id
+          0
+        else
+          RecentMovies.create(:user => @user, :movie => @movie)
+        end
       end
     end
 

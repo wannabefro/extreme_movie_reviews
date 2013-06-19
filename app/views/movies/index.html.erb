@@ -1,5 +1,5 @@
 <h1>Movies with Reviews<h2>
 	<% @movies.each do |display| %>
 		<%= display.title %>
-		<%= link_to "Show movie", movie_path(display.id) %>
+		<%= link_to display.title, movie_path(display.id) %>
 	<% end %>

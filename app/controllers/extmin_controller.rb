@@ -3,22 +3,13 @@ class ExtminController < ApplicationController
 
 	def index
 		@users = User.all
-
 	end
 
 	def show 
 		@user = User.find(params[:id])
-
 	end
 
-
-
-
-
-
-
-private
-
+	private
 	def require_admin
 		unless user_signed_in? && current_user.admin?
 			flash[:notice] = "You aint no admin"

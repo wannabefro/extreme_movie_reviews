@@ -39,14 +39,14 @@ let!(:valid_user) { FactoryGirl.create(:user) }
   it "should link to the movie's reviews page" do
     sign_in_as valid_user
     visit root_path
-    find(".row1").click_link "View eXtreme Reviews"
+    find(".row0").click_link "View eXtreme Reviews"
     expect(current_path).to eq(movie_reviews_path(movie3))
   end
 
   it "should link to add a new review for movie" do
     sign_in_as valid_user
     visit root_path
-    find(".row1").click_link "Add eXtreme Review"
+    find(".row0").click_link "Add eXtreme Review"
     uri = URI.parse(current_url)
     expect("#{movie_path(movie3)}#new-review").to eq(movie_path(movie3) + "#new-review")
   end
@@ -55,7 +55,7 @@ let!(:valid_user) { FactoryGirl.create(:user) }
     sign_in_as valid_user
     visit root_path
     prev_likes = movie3.likes.count
-    find(".row1").click_button "Like"
+    find(".row0").click_button "Like"
     expect(movie3.likes.count).to eq(prev_likes + 1)
   end
 

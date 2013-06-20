@@ -3,14 +3,18 @@
     <th><%= link_to "#{movie.title}", movie_path(movie) %></th>
     <th><%= movie.year %></th>
     <th class='likes'><%= movie.likes.count %></th>
-    <th class="actions">
-      <% like = movie.likes.new %>
-      <%= simple_form_for [like] do |f| %>
-        <%= f.hidden_field :likeable_type, :value => movie.class %>
-        <%= f.hidden_field :likeable_id, :value => movie.id %>
-          <%= f.button :submit, "Like", class: "btn" %>
-      <% end %>
-    </th>
+    <% if user_signed_in? %>
+      <th class="actions">
+        <% like = movie.likes.new %>
+        <%= simple_form_for [like] do |f| %>
+          <%= f.hidden_field :likeable_type, :value => movie.class %>
+          <%= f.hidden_field :likeable_id, :value => movie.id %>
+            <%= f.button :submit, "Like", class: "btn like-btn" %>
+        <% end %>
+      </th>
+    <% else %>
+      <th class="actions"></th>
+    <% end %>
     <th class='view-reviews'><%= link_to "View eXtreme Reviews", [movie, :reviews] %>
     </th>
     <th class='add-review'><%= link_to "Add eXtreme Review", movie_path(movie) + "#new-review" %>  

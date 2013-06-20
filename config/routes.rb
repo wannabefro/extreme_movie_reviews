@@ -3,6 +3,7 @@ ExtremeMovies::Application.routes.draw do
 
   devise_for :users
 
+  resources :users, :only => [:show]
   resources :likes, only: :create
   
   resources :movies do

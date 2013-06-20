@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'valid_attribute'
-require 'pry'
 
 describe Review do
   

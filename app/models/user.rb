@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-
+  has_many :recent_reviews
+  has_many :recent_movies
   has_many :reviews
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -12,4 +13,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   # validates_format_of :email, :with => /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i
+
 end

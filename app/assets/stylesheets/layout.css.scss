@@ -6,11 +6,38 @@
   font-size: 8px;
 }
 
+.navbar .navbar-inner{
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 24px;
+}
+
 .navbar .brand {
-  transition: all 0.2s linear 0s;
+  transition: all 0.4s linear 0s;
+  font-size: 30px;
+  color: #CC0000;
+  text-shadow: 0 1px 0 #A60000;
 }
 
 .navbar .brand:hover, .navbar .brand:focus {
-  color: red;
+  color: #FF0000;
 }
 
+.navbar .nav > li > a {
+  color: #CC0000;
+  text-shadow: 0 1px 0 #A60000;
+}
+
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+  color: #FF0000;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background-color: transparent;
+    color: #FF0000;
+}
+
+.navbar .nav li.dropdown > a:hover .caret, .navbar .nav li.dropdown > a:focus .caret {
+    border-bottom-color: #777777;
+    border-top-color: #777777;
+}

@@ -50,7 +50,7 @@ describe "Create a New Movie" do
     end
   
     it "does not create a new movie if the title isn't unique" do
-      FactoryGirl.create(:movie)
+      FactoryGirl.create(:movie, title: "Ironman")
       visit new_movie_path
   
       fill_in 'Title', :with => 'Ironman'

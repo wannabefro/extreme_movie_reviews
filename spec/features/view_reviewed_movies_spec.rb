@@ -16,7 +16,7 @@ describe "Browse movie" do
 		it 'it has a browese movie link' do
 			visit root_path
 			click_on 'Browse'
-			page.should have_content 'Movies with Reviews'
+			expect(current_path).to eq(movies_path)
 		end
 	end
 
@@ -33,10 +33,13 @@ describe "Browse movie" do
 		end
 	end
 
-	it 'will let the user see a review for the movie' do 
+	it 'will let the user see a review for the movie' do
+		new_movie = FactoryGirl.create(:movie, title: "AWESOME") 
 		visit movies_path
-		click_on 'Show movie'
-		page.should have_content('Ironman')
+
+		click_link new_movie.title
+
+		page.should have_content('AWESOME')
 	end
 
 	# it 'will let the user see reviews' do 

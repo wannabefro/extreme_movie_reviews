@@ -1,5 +1,11 @@
-<h1>Movies with Reviews<h2>
-	<% @movies.each do |display| %>
-		<%= display.title %>
-		<%= link_to "Show movie", movie_path(display.id) %>
-	<% end %>
+<div class="row">
+  <div class="container movies-index">
+    <table class="table table-condensed last-three">
+      <div class="row">
+        <h3 class="span6">eXtreme Movies</h3>
+      </div>
+        <%= render 'movies_index_headers' %>
+        <%= render 'movies_index_values' %>
+    </table>
+  </div>
+</div>

@@ -1,6 +1,4 @@
 require 'spec_helper'
-require 'valid_attribute'
-require 'pry'
 
 describe Movie do 
 
@@ -23,9 +21,9 @@ describe Movie do
 	end
 
 	it 'validates the uniqueness of movie title && year' do
-		FactoryGirl.create(:movie)
-		(FactoryGirl.build(:movie).valid?).should be_false
-		(FactoryGirl.build(:movie, :year => 2008).valid?).should be_true
+		FactoryGirl.create(:movie, title: "Ironman")
+		(FactoryGirl.build(:movie, title: "Ironman").valid?).should be_false
+		(FactoryGirl.build(:movie, title: "Ironman", :year => 2008).valid?).should be_true
 
 	end
 

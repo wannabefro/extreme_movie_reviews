@@ -1,16 +1,45 @@
+.hero-unit {
+  width: 100%;
+}
+
+.hero-unit .headline {
+  color: #771D1D;
+}
+
 .banner {
   margin-left: 0;
   margin-right: 0;
   width: 100%;
   margin-bottom: 20px;
+  background-color: #E9989E;
 }
 
-.hero-unit {
-  width: 100%;
+.banner .inner-banner .inner-banner-row {
+  margin-left: -85px;
+  margin-right: 65px;
+  background-color: #F3515D;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-radius: 25px;
 }
 
 .sign-up-link {
   padding-top: 35px;
+}
+
+.sign-up-link a {
+  color: #FFFFFF;
+}
+
+.home-container {
+  background-color: white;
+  border-radius: 6px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.view-all a {
+  padding-right: 35px;
 }
 
 .last-three th, .last-three td {
@@ -18,8 +47,12 @@
   width: 100px;
 }
 
-.last-three .likes, .last-three .actions {
-  width: 65px;
+.last-three .likes {
+  width: 25px;
+}
+
+.last-three .actions {
+  width: 50px;
 }
 
 .last-three .view-reviews, .last-three .add-review {

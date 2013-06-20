@@ -5,3 +5,38 @@
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
   =require twitter-bootstrap-static/fontawesome
 */
+
+body {
+  background-color: #E0E0E0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #FF7373;
+}
+
+a {
+  color: #FF2D00;
+}
+
+a:hover, a:focus {
+  color: #A60000;
+}
+
+.navbar-inner {
+
+  border: 1px;
+  border-radius: 0px;
+  background-color: #A60000; /* fallback color, place your own */
+
+  /* Gradients for modern browsers, replace as you see fit */
+  background-image: -moz-linear-gradient(top, #A60000, #222222);
+  background-image: -ms-linear-gradient(top, #A60000, #222222);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A60000), to(#222222));
+  background-image: -webkit-linear-gradient(top, #A60000, #222222);
+  background-image: -o-linear-gradient(top, #A60000, #222222);
+  background-image: linear-gradient(top, #A60000, #222222);
+  background-repeat: repeat-x;
+
+  /* IE8-9 gradient filter */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
+}

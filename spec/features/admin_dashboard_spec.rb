@@ -35,7 +35,7 @@ describe 'Visiting the admin page' do
 		expect(current_path).to eql(extmin_path(user))
 	end
 
-	it 'user summary page should have recent activity', focus: true    do
+	it 'user summary page should have recent activity' do
 		test = user 
 		sign_in_as test
 		visit movie_path(movie)

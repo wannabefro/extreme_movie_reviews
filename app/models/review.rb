@@ -10,6 +10,7 @@ class Review < ActiveRecord::Base
   validates_presence_of :title, :body, message: "Cannot be blank"
   validates_uniqueness_of :user_id, scoped_to: :movie_id
 
+
   state_machine :initial => :approved do
 
     event :flag do

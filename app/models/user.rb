@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :recent_reviews
   has_many :recent_movies
   has_many :reviews
+  has_many :flags
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable

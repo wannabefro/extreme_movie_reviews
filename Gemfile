@@ -14,6 +14,7 @@ gem 'devise'
 gem 'rails_admin'
 
 gem 'dynamic_form'
+gem 'state_machine'
 
 
 # Gems used only for assets and not required

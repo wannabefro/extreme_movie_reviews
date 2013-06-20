@@ -21,7 +21,5 @@ feature "Review up-voting" do
     expect(page).to have_content("Like added")
   end
 
-  scenario "when I try to like a review a second time"
 
-  scenario "when I am not signed in" 
 end

@@ -3,7 +3,11 @@
     <% @reviews.each do |review| %>
       <%= link_to review.title, [@movie, review] %>
       <h4><%= review.title %></h4>
-      <p><%= review.body %></p>
+      <% if review.state == 'approved' %>
+        <p><%= review.body %></p>
+      <% else %>
+        <p>Under review</p>
+      <% end %>
       <%= simple_form_for [@like] do |f| %>
         <%= f.hidden_field :likeable_type, :value => review.class %>
         <%= f.hidden_field :likeable_id, :value => review.id %>

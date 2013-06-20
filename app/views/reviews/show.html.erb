@@ -1,2 +1,3 @@
 <h1><%= @review.title %></h1>
 <h3><%= @review.body %></h3>
+<%= link_to 'Flag for review', new_movie_review_flag_path(@movie, @review) %>

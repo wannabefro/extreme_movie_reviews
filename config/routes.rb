@@ -5,10 +5,13 @@ ExtremeMovies::Application.routes.draw do
 
   resources :users, :only => [:show]
   resources :likes, only: :create
-  
+
   resources :movies do
-    resources :reviews
+    resources :reviews do
+      resources :flags, only: [:new, :create]
+    end
   end
+
 
   resources :extmin, :only => [:index, :show]
 
@@ -38,7 +41,7 @@ ExtremeMovies::Application.routes.draw do
   #     end
   #   end
 
-  
+
 
   # Sample resource route with sub-resources:
   #   resources :products do

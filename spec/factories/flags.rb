@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :flag do
-    review_id 1
-    reason "MyString"
-    user_id 1
+    reason "There is reason"
+    review
+    user
   end
 end

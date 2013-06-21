@@ -1,5 +1,31 @@
 All Users
 <% @users.each do |f| %>
 	<%= link_to f.email, extmin_path(f) %>
-	<% end %>
+<% end %>
+
+<div class="container">
+  <h1>All Flagged Reviews</h1>
+  
+  <table class="table">
+    <tr>
+      <th>Review Title</th>
+      <th>Reason</th>
+      <th>User Id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @flags.each_with_index do |flag, x| %>
+      <tr class=<%= "flagged#{x}" %>> 
+        <th><%= flag.review.title %></th>
+        <th><%= flag.reason %></th>
+        <th><%= flag.user.id %></th>
+        <th>
+          <%= button_to "Approve", approval_extmin_path(flag.review_id), :method => :put %>
+        </th>
+        <th><%= button_to "Remove", "#" %></th>
+      </tr>
+    <% end %>
+  </table>
+</div>
 	

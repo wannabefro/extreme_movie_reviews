@@ -1,13 +1,5 @@
 require 'spec_helper'
 
-feature 'moderating a review', %q{
-  As an administrator
-  I want to be able to moderate a review
-  So that I can keep shit off my site
-} do
-
-end
-
 feature 'flaggin a review', %q{
   As a user
   I want to be able to flag a review for moderation
@@ -24,17 +16,18 @@ feature 'flaggin a review', %q{
 
 
   scenario 'I can click on a flag for review button next to a review' do
-    flag_a_review
+    flag_a_review(movie, review)
     expect(page).to have_content('Flag for review')
   end
 
   scenario 'If I flag a review, I must specify why it was flagged' do
-    flag_a_review
+    flag_a_review(movie, review)
     click_on 'Flag for review'
     expect(page).to have_content('Please explain')
   end
-  scenario 'If I flag a review, it should appear on the page as under review', focus: true do
-    flag_a_review
+
+  scenario 'If I flag a review, it should appear on the page as under review' do
+    flag_a_review(movie, review)
     click_on 'Flag for review'
     fill_in 'Reason', with: 'haters gonna hate'
     click_on 'Flag'
@@ -42,10 +35,6 @@ feature 'flaggin a review', %q{
     expect(page).to have_content('Under review')
   end
 
-  def flag_a_review
-    visit movie_path(movie)
-    click_on review[:title]
-  end
-
-
 end
+
+

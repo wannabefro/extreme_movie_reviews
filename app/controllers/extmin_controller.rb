@@ -3,10 +3,22 @@ class ExtminController < ApplicationController
 
 	def index
 		@users = User.all
+		@flags = Flag.all
 	end
 
 	def show 
 		@user = User.find(params[:id])
+	end
+
+	def approval
+		@review = Review.find(params[:id])
+		@flag = Flag.where("review_id = ?", @review.id).last
+
+		@review.approve
+		@review.save
+		@flag.destroy
+
+		redirect_to extmin_index_path
 	end
 
 	private

@@ -5,13 +5,16 @@ class Review < ActiveRecord::Base
   has_many :flags
   has_many :likes, as: :likeable
 
-  attr_accessible :title, :body, :user, :movie
+  attr_accessible :title, :body, :user, :movie, :state
 
   validates_presence_of :title, :body, message: "Cannot be blank"
   validates_uniqueness_of :user_id, scoped_to: :movie_id
 
 
   state_machine :initial => :approved do
+    state :approved
+    state :flagged
+    state :removed
 
     event :flag do
       transition :approved => :flagged

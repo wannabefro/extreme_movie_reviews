@@ -13,7 +13,11 @@ ExtremeMovies::Application.routes.draw do
   end
 
 
-  resources :extmin, :only => [:index, :show]
+  resources :extmin, :only => [:index, :show] do
+    member do
+      put :approval
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
